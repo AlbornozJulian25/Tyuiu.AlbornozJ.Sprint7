@@ -47,10 +47,16 @@
             panelStatistics_AJ = new Panel();
             labelTotal_AJ = new Label();
             labelAverage_AJ = new Label();
+            labelCount_AJ = new Label();
+            labelMax_AJ = new Label();
+            statusStripMain_AJ = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            toolStripStatusLabelReady_AJ = new ToolStripStatusLabel();
             menuStripMain_AJ.SuspendLayout();
             toolStripMain_AJ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewContracts_AJ).BeginInit();
             panelStatistics_AJ.SuspendLayout();
+            statusStripMain_AJ.SuspendLayout();
             SuspendLayout();
             // 
             // menuStripMain_AJ
@@ -130,6 +136,7 @@
             toolStripButtonLoad_AJ.Name = "toolStripButtonLoad_AJ";
             toolStripButtonLoad_AJ.Size = new Size(101, 24);
             toolStripButtonLoad_AJ.Text = "Загрузить";
+            toolStripButtonLoad_AJ.Click += toolStripButtonLoad_AJ_Click;
             // 
             // toolStripButtonStats_AJ
             // 
@@ -168,6 +175,9 @@
             // 
             // panelStatistics_AJ
             // 
+            panelStatistics_AJ.Controls.Add(statusStripMain_AJ);
+            panelStatistics_AJ.Controls.Add(labelMax_AJ);
+            panelStatistics_AJ.Controls.Add(labelCount_AJ);
             panelStatistics_AJ.Controls.Add(labelAverage_AJ);
             panelStatistics_AJ.Controls.Add(labelTotal_AJ);
             panelStatistics_AJ.Dock = DockStyle.Bottom;
@@ -180,7 +190,7 @@
             // labelTotal_AJ
             // 
             labelTotal_AJ.AutoSize = true;
-            labelTotal_AJ.Location = new Point(326, 50);
+            labelTotal_AJ.Location = new Point(12, 9);
             labelTotal_AJ.Name = "labelTotal_AJ";
             labelTotal_AJ.Size = new Size(120, 20);
             labelTotal_AJ.TabIndex = 0;
@@ -189,11 +199,51 @@
             // labelAverage_AJ
             // 
             labelAverage_AJ.AutoSize = true;
-            labelAverage_AJ.Location = new Point(573, 50);
+            labelAverage_AJ.Location = new Point(657, 9);
             labelAverage_AJ.Name = "labelAverage_AJ";
             labelAverage_AJ.Size = new Size(131, 20);
             labelAverage_AJ.TabIndex = 1;
             labelAverage_AJ.Text = "Средняя сумма: 0\r\n";
+            // 
+            // labelCount_AJ
+            // 
+            labelCount_AJ.AutoSize = true;
+            labelCount_AJ.Location = new Point(12, 43);
+            labelCount_AJ.Name = "labelCount_AJ";
+            labelCount_AJ.Size = new Size(184, 20);
+            labelCount_AJ.TabIndex = 2;
+            labelCount_AJ.Text = "Количество договоров: 0\r\n";
+            // 
+            // labelMax_AJ
+            // 
+            labelMax_AJ.AutoSize = true;
+            labelMax_AJ.Location = new Point(612, 43);
+            labelMax_AJ.Name = "labelMax_AJ";
+            labelMax_AJ.Size = new Size(176, 20);
+            labelMax_AJ.TabIndex = 3;
+            labelMax_AJ.Text = "Максимальная сумма: 0\r\n";
+            // 
+            // statusStripMain_AJ
+            // 
+            statusStripMain_AJ.ImageScalingSize = new Size(20, 20);
+            statusStripMain_AJ.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabelReady_AJ });
+            statusStripMain_AJ.Location = new Point(0, 74);
+            statusStripMain_AJ.Name = "statusStripMain_AJ";
+            statusStripMain_AJ.Size = new Size(800, 26);
+            statusStripMain_AJ.TabIndex = 4;
+            statusStripMain_AJ.Text = "statusStrip1";
+            statusStripMain_AJ.ItemClicked += statusStripMain_AJ_ItemClicked;
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(0, 20);
+            // 
+            // toolStripStatusLabelReady_AJ
+            // 
+            toolStripStatusLabelReady_AJ.Name = "toolStripStatusLabelReady_AJ";
+            toolStripStatusLabelReady_AJ.Size = new Size(57, 20);
+            toolStripStatusLabelReady_AJ.Text = "Готово";
             // 
             // FormMain
             // 
@@ -215,6 +265,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewContracts_AJ).EndInit();
             panelStatistics_AJ.ResumeLayout(false);
             panelStatistics_AJ.PerformLayout();
+            statusStripMain_AJ.ResumeLayout(false);
+            statusStripMain_AJ.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +291,10 @@
         private Panel panelStatistics_AJ;
         private Label labelTotal_AJ;
         private Label labelAverage_AJ;
+        private Label labelCount_AJ;
+        private Label labelMax_AJ;
+        private StatusStrip statusStripMain_AJ;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel toolStripStatusLabelReady_AJ;
     }
 }
