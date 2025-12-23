@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             menuStripMain_AJ = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
-            справкаToolStripMenuItem = new ToolStripMenuItem();
             загрузитьДоговорыToolStripMenuItem = new ToolStripMenuItem();
             сохранитьToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             выходToolStripMenuItem = new ToolStripMenuItem();
+            справкаToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
             руководствоToolStripMenuItem = new ToolStripMenuItem();
             toolStripMain_AJ = new ToolStrip();
@@ -45,18 +48,20 @@
             toolStripButtonChart_AJ = new ToolStripButton();
             dataGridViewContracts_AJ = new DataGridView();
             panelStatistics_AJ = new Panel();
-            labelTotal_AJ = new Label();
-            labelAverage_AJ = new Label();
-            labelCount_AJ = new Label();
-            labelMax_AJ = new Label();
             statusStripMain_AJ = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabelReady_AJ = new ToolStripStatusLabel();
+            labelMax_AJ = new Label();
+            labelCount_AJ = new Label();
+            labelAverage_AJ = new Label();
+            labelTotal_AJ = new Label();
+            chartContracts_AJ = new System.Windows.Forms.DataVisualization.Charting.Chart();
             menuStripMain_AJ.SuspendLayout();
             toolStripMain_AJ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewContracts_AJ).BeginInit();
             panelStatistics_AJ.SuspendLayout();
             statusStripMain_AJ.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartContracts_AJ).BeginInit();
             SuspendLayout();
             // 
             // menuStripMain_AJ
@@ -75,13 +80,6 @@
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(59, 24);
             файлToolStripMenuItem.Text = "Файл";
-            // 
-            // справкаToolStripMenuItem
-            // 
-            справкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { оПрограммеToolStripMenuItem, руководствоToolStripMenuItem });
-            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            справкаToolStripMenuItem.Size = new Size(81, 24);
-            справкаToolStripMenuItem.Text = "Справка";
             // 
             // загрузитьДоговорыToolStripMenuItem
             // 
@@ -107,16 +105,23 @@
             выходToolStripMenuItem.Size = new Size(233, 26);
             выходToolStripMenuItem.Text = "Выход";
             // 
+            // справкаToolStripMenuItem
+            // 
+            справкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { оПрограммеToolStripMenuItem, руководствоToolStripMenuItem });
+            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            справкаToolStripMenuItem.Size = new Size(81, 24);
+            справкаToolStripMenuItem.Text = "Справка";
+            // 
             // оПрограммеToolStripMenuItem
             // 
             оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            оПрограммеToolStripMenuItem.Size = new Size(224, 26);
+            оПрограммеToolStripMenuItem.Size = new Size(187, 26);
             оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // руководствоToolStripMenuItem
             // 
             руководствоToolStripMenuItem.Name = "руководствоToolStripMenuItem";
-            руководствоToolStripMenuItem.Size = new Size(224, 26);
+            руководствоToolStripMenuItem.Size = new Size(187, 26);
             руководствоToolStripMenuItem.Text = "Руководство";
             // 
             // toolStripMain_AJ
@@ -145,6 +150,7 @@
             toolStripButtonStats_AJ.Name = "toolStripButtonStats_AJ";
             toolStripButtonStats_AJ.Size = new Size(108, 24);
             toolStripButtonStats_AJ.Text = "Статистика";
+            toolStripButtonStats_AJ.Click += toolStripButtonStats_AJ_Click;
             // 
             // toolStripButtonSearch_AJ
             // 
@@ -153,6 +159,7 @@
             toolStripButtonSearch_AJ.Name = "toolStripButtonSearch_AJ";
             toolStripButtonSearch_AJ.Size = new Size(76, 24);
             toolStripButtonSearch_AJ.Text = "Поиск";
+            toolStripButtonSearch_AJ.Click += toolStripButtonSearch_AJ_Click;
             // 
             // toolStripButtonChart_AJ
             // 
@@ -161,6 +168,7 @@
             toolStripButtonChart_AJ.Name = "toolStripButtonChart_AJ";
             toolStripButtonChart_AJ.Size = new Size(83, 24);
             toolStripButtonChart_AJ.Text = "График";
+            toolStripButtonChart_AJ.Click += toolStripButtonChart_AJ_Click;
             // 
             // dataGridViewContracts_AJ
             // 
@@ -187,42 +195,6 @@
             panelStatistics_AJ.TabIndex = 3;
             panelStatistics_AJ.Paint += panelStatistics_AJ_Paint;
             // 
-            // labelTotal_AJ
-            // 
-            labelTotal_AJ.AutoSize = true;
-            labelTotal_AJ.Location = new Point(12, 9);
-            labelTotal_AJ.Name = "labelTotal_AJ";
-            labelTotal_AJ.Size = new Size(120, 20);
-            labelTotal_AJ.TabIndex = 0;
-            labelTotal_AJ.Text = "Общая сумма: 0\r\n";
-            // 
-            // labelAverage_AJ
-            // 
-            labelAverage_AJ.AutoSize = true;
-            labelAverage_AJ.Location = new Point(657, 9);
-            labelAverage_AJ.Name = "labelAverage_AJ";
-            labelAverage_AJ.Size = new Size(131, 20);
-            labelAverage_AJ.TabIndex = 1;
-            labelAverage_AJ.Text = "Средняя сумма: 0\r\n";
-            // 
-            // labelCount_AJ
-            // 
-            labelCount_AJ.AutoSize = true;
-            labelCount_AJ.Location = new Point(12, 43);
-            labelCount_AJ.Name = "labelCount_AJ";
-            labelCount_AJ.Size = new Size(184, 20);
-            labelCount_AJ.TabIndex = 2;
-            labelCount_AJ.Text = "Количество договоров: 0\r\n";
-            // 
-            // labelMax_AJ
-            // 
-            labelMax_AJ.AutoSize = true;
-            labelMax_AJ.Location = new Point(612, 43);
-            labelMax_AJ.Name = "labelMax_AJ";
-            labelMax_AJ.Size = new Size(176, 20);
-            labelMax_AJ.TabIndex = 3;
-            labelMax_AJ.Text = "Максимальная сумма: 0\r\n";
-            // 
             // statusStripMain_AJ
             // 
             statusStripMain_AJ.ImageScalingSize = new Size(20, 20);
@@ -245,11 +217,66 @@
             toolStripStatusLabelReady_AJ.Size = new Size(57, 20);
             toolStripStatusLabelReady_AJ.Text = "Готово";
             // 
+            // labelMax_AJ
+            // 
+            labelMax_AJ.AutoSize = true;
+            labelMax_AJ.Location = new Point(612, 43);
+            labelMax_AJ.Name = "labelMax_AJ";
+            labelMax_AJ.Size = new Size(176, 20);
+            labelMax_AJ.TabIndex = 3;
+            labelMax_AJ.Text = "Максимальная сумма: 0\r\n";
+            // 
+            // labelCount_AJ
+            // 
+            labelCount_AJ.AutoSize = true;
+            labelCount_AJ.Location = new Point(12, 43);
+            labelCount_AJ.Name = "labelCount_AJ";
+            labelCount_AJ.Size = new Size(184, 20);
+            labelCount_AJ.TabIndex = 2;
+            labelCount_AJ.Text = "Количество договоров: 0\r\n";
+            // 
+            // labelAverage_AJ
+            // 
+            labelAverage_AJ.AutoSize = true;
+            labelAverage_AJ.Location = new Point(657, 9);
+            labelAverage_AJ.Name = "labelAverage_AJ";
+            labelAverage_AJ.Size = new Size(131, 20);
+            labelAverage_AJ.TabIndex = 1;
+            labelAverage_AJ.Text = "Средняя сумма: 0\r\n";
+            // 
+            // labelTotal_AJ
+            // 
+            labelTotal_AJ.AutoSize = true;
+            labelTotal_AJ.Location = new Point(12, 9);
+            labelTotal_AJ.Name = "labelTotal_AJ";
+            labelTotal_AJ.Size = new Size(120, 20);
+            labelTotal_AJ.TabIndex = 0;
+            labelTotal_AJ.Text = "Общая сумма: 0\r\n";
+            // 
+            // chartContracts_AJ
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartContracts_AJ.ChartAreas.Add(chartArea2);
+            chartContracts_AJ.Dock = DockStyle.Fill;
+            legend2.Name = "Legend1";
+            chartContracts_AJ.Legends.Add(legend2);
+            chartContracts_AJ.Location = new Point(0, 55);
+            chartContracts_AJ.Name = "chartContracts_AJ";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartContracts_AJ.Series.Add(series2);
+            chartContracts_AJ.Size = new Size(800, 295);
+            chartContracts_AJ.TabIndex = 4;
+            chartContracts_AJ.Text = "chart1";
+            chartContracts_AJ.Visible = false;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(chartContracts_AJ);
             Controls.Add(panelStatistics_AJ);
             Controls.Add(dataGridViewContracts_AJ);
             Controls.Add(toolStripMain_AJ);
@@ -267,6 +294,7 @@
             panelStatistics_AJ.PerformLayout();
             statusStripMain_AJ.ResumeLayout(false);
             statusStripMain_AJ.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartContracts_AJ).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,5 +324,6 @@
         private StatusStrip statusStripMain_AJ;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabelReady_AJ;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartContracts_AJ;
     }
 }
