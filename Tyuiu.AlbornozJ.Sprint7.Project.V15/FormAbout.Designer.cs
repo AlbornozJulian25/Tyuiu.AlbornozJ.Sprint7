@@ -35,7 +35,8 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Image = null;
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.LightGray;
             this.pictureBoxLogo.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(120, 120);
