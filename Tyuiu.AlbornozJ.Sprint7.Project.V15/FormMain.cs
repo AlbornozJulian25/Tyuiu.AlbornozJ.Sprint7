@@ -433,25 +433,38 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
 
         private void textBoxSearchContracts_TextChanged(object sender, EventArgs e)
         {
+            dataGridViewContracts.EndEdit();
             string searchText = textBoxSearchContracts.Text.ToLower();
-
             foreach (DataGridViewRow row in dataGridViewContracts.Rows)
             {
+                if (row.IsNewRow) continue;
                 bool visible = false;
-
-                if (!row.IsNewRow)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    foreach (DataGridViewCell cell in row.Cells)
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
                     {
-                        if (cell.Value != null &&
-                            cell.Value.ToString().ToLower().Contains(searchText))
-                        {
-                            visible = true;
-                            break;
-                        }
+                        visible = true; break;
                     }
                 }
+                row.Visible = visible || string.IsNullOrEmpty(searchText);
+            }
+        }
 
+        private void textBoxSearchEmployees_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewEmployees.EndEdit();
+            string searchText = textBoxSearchEmployees.Text.ToLower();
+            foreach (DataGridViewRow row in dataGridViewEmployees.Rows)
+            {
+                if (row.IsNewRow) continue;
+                bool visible = false;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
+                    {
+                        visible = true; break;
+                    }
+                }
                 row.Visible = visible || string.IsNullOrEmpty(searchText);
             }
         }

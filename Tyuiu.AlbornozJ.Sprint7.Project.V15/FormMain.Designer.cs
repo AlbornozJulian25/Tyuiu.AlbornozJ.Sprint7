@@ -381,9 +381,9 @@
             // 
             this.textBoxSearchEmployees.Location = new System.Drawing.Point(10, 50);
             this.textBoxSearchEmployees.Name = "textBoxSearchEmployees";
-            this.textBoxSearchEmployees.Size = new System.Drawing.Size(230, 20);
+            this.textBoxSearchEmployees.Size = new System.Drawing.Size(230, 20);            
             this.textBoxSearchEmployees.TabIndex = 1;
-            this.textBoxSearchEmployees.TextChanged += new System.EventHandler(this.textBoxSearchContracts_TextChanged);
+            this.textBoxSearchEmployees.TextChanged += new System.EventHandler(this.textBoxSearchEmployees_TextChanged);
             // 
             // labelSearchEmployees
             // 
