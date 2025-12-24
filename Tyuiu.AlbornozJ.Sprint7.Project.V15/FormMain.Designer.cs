@@ -229,7 +229,8 @@
             // 
             // buttonAddFileContracts
             // 
-            this.buttonAddFileContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddFileContracts.Image")));
+            this.buttonAddFileContracts.Text = "📂";
+            this.buttonAddFileContracts.Image = null;
             this.buttonAddFileContracts.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileContracts.Name = "buttonAddFileContracts";
             this.buttonAddFileContracts.Size = new System.Drawing.Size(75, 60);
@@ -241,7 +242,8 @@
             // buttonSaveFileContracts
             // 
             this.buttonSaveFileContracts.Enabled = false;
-            this.buttonSaveFileContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveFileContracts.Image")));
+            this.buttonSaveFileContracts.Text = "💾";
+            this.buttonSaveFileContracts.Image = null;
             this.buttonSaveFileContracts.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileContracts.Name = "buttonSaveFileContracts";
             this.buttonSaveFileContracts.Size = new System.Drawing.Size(75, 60);
@@ -266,7 +268,8 @@
             // buttonRefreshContracts
             // 
             this.buttonRefreshContracts.Enabled = false;
-            this.buttonRefreshContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefreshContracts.Image")));
+            this.buttonRefreshContracts.Text = "🔄";
+            this.buttonRefreshContracts.Image = null;
             this.buttonRefreshContracts.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshContracts.Name = "buttonRefreshContracts";
             this.buttonRefreshContracts.Size = new System.Drawing.Size(60, 60);
@@ -278,7 +281,8 @@
             // buttonEditRowContracts
             // 
             this.buttonEditRowContracts.Enabled = false;
-            this.buttonEditRowContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditRowContracts.Image")));
+            this.buttonEditRowContracts.Text = "✏️";
+            this.buttonEditRowContracts.Image = null;
             this.buttonEditRowContracts.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowContracts.Name = "buttonEditRowContracts";
             this.buttonEditRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -290,7 +294,8 @@
             // buttonDelRowContracts
             // 
             this.buttonDelRowContracts.Enabled = false;
-            this.buttonDelRowContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelRowContracts.Image")));
+            this.buttonDelRowContracts.Text = "❌";
+            this.buttonDelRowContracts.Image = null;
             this.buttonDelRowContracts.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowContracts.Name = "buttonDelRowContracts";
             this.buttonDelRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -302,7 +307,8 @@
             // buttonAddRowContracts
             // 
             this.buttonAddRowContracts.Enabled = false;
-            this.buttonAddRowContracts.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddRowContracts.Image")));
+            this.buttonAddRowContracts.Text = "➕";
+            this.buttonAddRowContracts.Image = null;
             this.buttonAddRowContracts.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowContracts.Name = "buttonAddRowContracts";
             this.buttonAddRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -401,7 +407,8 @@
             // 
             // buttonAddFileEmployees
             // 
-            this.buttonAddFileEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddFileEmployees.Image")));
+            this.buttonAddFileEmployees.Text = "📂";
+            this.buttonAddFileEmployees.Image = null;
             this.buttonAddFileEmployees.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileEmployees.Name = "buttonAddFileEmployees";
             this.buttonAddFileEmployees.Size = new System.Drawing.Size(75, 60);
@@ -413,7 +420,8 @@
             // buttonSaveFileEmployees
             // 
             this.buttonSaveFileEmployees.Enabled = false;
-            this.buttonSaveFileEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveFileEmployees.Image")));
+            this.buttonSaveFileEmployees.Text = "💾";
+            this.buttonSaveFileEmployees.Image = null;
             this.buttonSaveFileEmployees.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileEmployees.Name = "buttonSaveFileEmployees";
             this.buttonSaveFileEmployees.Size = new System.Drawing.Size(75, 60);
@@ -437,7 +445,8 @@
             // buttonRefreshEmployees
             // 
             this.buttonRefreshEmployees.Enabled = false;
-            this.buttonRefreshEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefreshEmployees.Image")));
+            this.buttonRefreshEmployees.Text = "🔄";
+            this.buttonRefreshEmployees.Image = null;
             this.buttonRefreshEmployees.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshEmployees.Name = "buttonRefreshEmployees";
             this.buttonRefreshEmployees.Size = new System.Drawing.Size(60, 60);
@@ -449,7 +458,8 @@
             // buttonEditRowEmployees
             // 
             this.buttonEditRowEmployees.Enabled = false;
-            this.buttonEditRowEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditRowEmployees.Image")));
+            this.buttonEditRowEmployees.Text = "✏️";
+            this.buttonEditRowEmployees.Image = null;
             this.buttonEditRowEmployees.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowEmployees.Name = "buttonEditRowEmployees";
             this.buttonEditRowEmployees.Size = new System.Drawing.Size(60, 60);
@@ -460,7 +470,8 @@
             // buttonDelRowEmployees
             // 
             this.buttonDelRowEmployees.Enabled = false;
-            this.buttonDelRowEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelRowEmployees.Image")));
+            this.buttonDelRowEmployees.Text = "❌";
+            this.buttonDelRowEmployees.Image = null;
             this.buttonDelRowEmployees.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowEmployees.Name = "buttonDelRowEmployees";
             this.buttonDelRowEmployees.Size = new System.Drawing.Size(60, 60);
@@ -471,7 +482,8 @@
             // buttonAddRowEmployees
             // 
             this.buttonAddRowEmployees.Enabled = false;
-            this.buttonAddRowEmployees.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddRowEmployees.Image")));
+            this.buttonAddRowEmployees.Text = "➕";
+            this.buttonAddRowEmployees.Image = null;
             this.buttonAddRowEmployees.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowEmployees.Name = "buttonAddRowEmployees";
             this.buttonAddRowEmployees.Size = new System.Drawing.Size(60, 60);
