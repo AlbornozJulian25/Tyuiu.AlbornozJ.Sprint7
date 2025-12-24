@@ -31,7 +31,7 @@
             this.labelAbout.Name = "labelAbout";
             this.labelAbout.Size = new System.Drawing.Size(280, 117);
             this.labelAbout.TabIndex = 0;
-            this.labelAbout.Text = resources.GetString("labelAbout.Text");
+            this.labelAbout.Text = resources.GetString("Программа \\\"Управление договорной деятельностью организации\\\"\\r\\n\" +\r\n                      \"Версия: 1.0\\r\\n\" +\r\n                      \"Разработчик: Albornoz J.\\r\\n\" +\r\n                      \"Группа: ИИПб 25-1\\r\\n\" +\r\n                      \"Дата: 2025\\r\\n\\r\\n\" +\r\n                      \"Функции программы:\\r\\n\" +\r\n                      \"• Загрузка данных из CSV файлов\\r\\n\" +\r\n                      \"• Управление договорами и сотрудниками\\r\\n\" +\r\n                      \"• Просмотр статистики и графиков\\r\\n\" +\r\n                      \"• Сохранение изменений в файлы\\r\\n\\r\\n\" +\r\n                      \"Все данные хранятся в формате CSV.\";");
             // 
             // pictureBoxLogo
             // 

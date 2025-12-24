@@ -404,10 +404,12 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         }
 
         private void FormMain_Load(object sender, EventArgs e)
-        {
+        {          
+
             // Инициализация при загрузке формы
             textBoxSearchContracts.Text = "";
             textBoxSearchEmployees.Text = "";
+
             // Para dataGridViewContracts
             dataGridViewContracts.Columns.Add("Код договора", "Код договора");
             dataGridViewContracts.Columns.Add("Организация", "Организация");
@@ -426,6 +428,7 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             dataGridViewEmployees.Columns.Add("Оклад", "Оклад");
             dataGridViewEmployees.Columns.Add("Начало работы", "Начало работы");
             dataGridViewEmployees.Columns.Add("Окончание работы", "Окончание работы");
+
         }
 
         private void textBoxSearchContracts_TextChanged(object sender, EventArgs e)
