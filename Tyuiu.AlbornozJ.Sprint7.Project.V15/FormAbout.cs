@@ -16,7 +16,7 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         {
             InitializeComponent();
             labelAbout.Text = @"Программа: Управление договорной деятельностью организации
-Разработчик: Albornoz J.
+Разработчик: Albornoz Julián.
 Группа: ИИПб 25-1
 Дата: 2025";
         }
