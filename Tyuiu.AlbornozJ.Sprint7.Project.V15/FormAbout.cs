@@ -15,6 +15,10 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         public FormAbout()
         {
             InitializeComponent();
+            labelAbout.Text = @"Программа: Управление договорной деятельностью организации
+Разработчик: Albornoz J.
+Группа: ИИПб 25-1
+Дата: 2025";
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
