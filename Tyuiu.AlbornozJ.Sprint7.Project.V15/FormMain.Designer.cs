@@ -585,7 +585,7 @@
             this.groupBoxEmployeesStats.Controls.Add(this.labelMaxSalary);
             this.groupBoxEmployeesStats.Controls.Add(this.labelAvgSalary);
             this.groupBoxEmployeesStats.Controls.Add(this.labelTotalEmployees);
-            this.groupBoxEmployeesStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxEmployeesStats.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxEmployeesStats.Location = new System.Drawing.Point(0, 250);
             this.groupBoxEmployeesStats.Name = "groupBoxEmployeesStats";
             this.groupBoxEmployeesStats.Size = new System.Drawing.Size(320, 279);
@@ -936,7 +936,3 @@
         private System.Windows.Forms.ToolTip toolTipMain;
     }
 }
-
-
-
-
