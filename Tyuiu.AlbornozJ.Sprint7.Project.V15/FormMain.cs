@@ -1,5 +1,7 @@
-﻿using System.Windows.Forms;
-
+﻿using System;
+using System.Windows.Forms;
+using System.IO;
+using System.Collections.Generic;
 
 using Tyuiu.AlbornozJ.Sprint7.Project.V15.Lib;
 
@@ -24,10 +26,8 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             {
                 openFileDialogContracts.ShowDialog();
                 openFilePathContracts = openFileDialogContracts.FileName;
-
                 string[,] rawData = ds.LoadFromFileData(openFilePathContracts);
                 dataGridViewContracts.Rows.Clear();
-
                 for (int i = 0; i < rawData.GetLength(0); i++)
                 {
                     string[] row = new string[rawData.GetLength(1)];
@@ -37,13 +37,10 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     }
                     dataGridViewContracts.Rows.Add(row);
                 }
-
                 MessageBox.Show("Данные договоров успешно загружены!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 UpdateStatistics();
                 UpdateCharts();
-
                 buttonSaveFileContracts.Enabled = true;
                 buttonAddRowContracts.Enabled = true;
                 buttonDelRowContracts.Enabled = true;
@@ -62,27 +59,21 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             {
                 saveFileDialogContracts.FileName = "contracts.csv";
                 saveFileDialogContracts.InitialDirectory = @"C:\DataSprint7\";
-
                 if (saveFileDialogContracts.ShowDialog() != DialogResult.OK)
                     return;
-
                 string path = saveFileDialogContracts.FileName;
                 File.WriteAllText(path, "");
-
                 int rows = dataGridViewContracts.RowCount;
                 int columns = dataGridViewContracts.ColumnCount;
-
                 for (int i = 0; i < rows; i++)
                 {
                     if (dataGridViewContracts.Rows[i].IsNewRow)
                         continue;
-
                     string str = "";
                     for (int j = 0; j < columns; j++)
                     {
                         var cellValue = dataGridViewContracts.Rows[i].Cells[j].Value;
                         string cellStr = cellValue?.ToString() ?? "";
-
                         if (j == columns - 1)
                             str += cellStr;
                         else
@@ -90,7 +81,6 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     }
                     File.AppendAllText(path, str + "\r\n", System.Text.Encoding.UTF8);
                 }
-
                 MessageBox.Show("Данные успешно сохранены!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -106,7 +96,6 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             try
             {
                 int newRowIndex = dataGridViewContracts.Rows.Add();
-
                 if (newRowIndex >= 0)
                 {
                     dataGridViewContracts.FirstDisplayedScrollingRowIndex = newRowIndex;
@@ -148,28 +137,23 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
             if (MessageBox.Show("Вы уверены, что хотите удалить выбранные строки?", "Подтвердите удаление",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
             }
-
             try
             {
                 List<int> rowsToDelete = new List<int>();
                 foreach (DataGridViewRow selectedRow in dataGridViewContracts.SelectedRows)
                     rowsToDelete.Add(selectedRow.Index);
-
                 for (int i = rowsToDelete.Count - 1; i >= 0; i--)
                 {
                     dataGridViewContracts.Rows.RemoveAt(rowsToDelete[i]);
                 }
-
                 dataGridViewContracts.ClearSelection();
                 MessageBox.Show("Строка успешно удалена!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 UpdateStatistics();
                 UpdateCharts();
             }
@@ -180,18 +164,15 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             }
         }
 
-        // МЕТОДЫ ДЛЯ СОТРУДНИКОВ (аналогичные, но для второй таблицы)
-
+        // МЕТОДЫ ДЛЯ СОТРУДНИКОВ (AGREGADOS LOS QUE FALTABAN)
         private void buttonAddFileEmployees_Click(object sender, EventArgs e)
         {
             try
             {
                 openFileDialogEmployees.ShowDialog();
                 openFilePathEmployees = openFileDialogEmployees.FileName;
-
                 string[,] rawData = ds.LoadFromFileData(openFilePathEmployees);
                 dataGridViewEmployees.Rows.Clear();
-
                 for (int i = 0; i < rawData.GetLength(0); i++)
                 {
                     string[] row = new string[rawData.GetLength(1)];
@@ -201,13 +182,10 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     }
                     dataGridViewEmployees.Rows.Add(row);
                 }
-
                 MessageBox.Show("Данные сотрудников успешно загружены!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 UpdateStatistics();
                 UpdateCharts();
-
                 buttonSaveFileEmployees.Enabled = true;
                 buttonAddRowEmployees.Enabled = true;
                 buttonDelRowEmployees.Enabled = true;
@@ -220,6 +198,117 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             }
         }
 
+        private void buttonSaveFileEmployees_Click(object sender, EventArgs e) // NUEVO MÉTODO
+        {
+            try
+            {
+                saveFileDialogEmployees.FileName = "employees.csv";
+                saveFileDialogEmployees.InitialDirectory = @"C:\DataSprint7\";
+                if (saveFileDialogEmployees.ShowDialog() != DialogResult.OK)
+                    return;
+                string path = saveFileDialogEmployees.FileName;
+                File.WriteAllText(path, "");
+                int rows = dataGridViewEmployees.RowCount;
+                int columns = dataGridViewEmployees.ColumnCount;
+                for (int i = 0; i < rows; i++)
+                {
+                    if (dataGridViewEmployees.Rows[i].IsNewRow)
+                        continue;
+                    string str = "";
+                    for (int j = 0; j < columns; j++)
+                    {
+                        var cellValue = dataGridViewEmployees.Rows[i].Cells[j].Value;
+                        string cellStr = cellValue?.ToString() ?? "";
+                        if (j == columns - 1)
+                            str += cellStr;
+                        else
+                            str += cellStr + ";";
+                    }
+                    File.AppendAllText(path, str + "\r\n", System.Text.Encoding.UTF8);
+                }
+                MessageBox.Show("Данные успешно сохранены!", "Успех",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении файла:\n{ex.Message}",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonAddRowEmployees_Click(object sender, EventArgs e) // NUEVO MÉTODO
+        {
+            try
+            {
+                int newRowIndex = dataGridViewEmployees.Rows.Add();
+                if (newRowIndex >= 0)
+                {
+                    dataGridViewEmployees.FirstDisplayedScrollingRowIndex = newRowIndex;
+                    dataGridViewEmployees.ClearSelection();
+                    dataGridViewEmployees.Rows[newRowIndex].Selected = true;
+                }
+                UpdateStatistics();
+                UpdateCharts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при добавлении новой строки:\n{ex.Message}",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void buttonEditRowEmployees_Click(object sender, EventArgs e) // NUEVO MÉTODO
+        {
+            if (dataGridViewEmployees.ReadOnly)
+            {
+                dataGridViewEmployees.ReadOnly = false;
+                MessageBox.Show("Режим редактирования включён.\nКликните по ячейке для изменения данных.",
+                    "Редактирование", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dataGridViewEmployees.ReadOnly = true;
+                MessageBox.Show("Режим редактирования выключен.\nИзменения можно сохранить с помощью кнопки «Сохранить файл».",
+                    "Редактирование", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void buttonDelRowEmployees_Click(object sender, EventArgs e) // NUEVO MÉTODO
+        {
+            dataGridViewEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            if (dataGridViewEmployees.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Пожалуйста, выберите строку для удаления.", "Строка не выбрана",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Вы уверены, что хотите удалить выбранные строки?", "Подтвердите удаление",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+            try
+            {
+                List<int> rowsToDelete = new List<int>();
+                foreach (DataGridViewRow selectedRow in dataGridViewEmployees.SelectedRows)
+                    rowsToDelete.Add(selectedRow.Index);
+                for (int i = rowsToDelete.Count - 1; i >= 0; i--)
+                {
+                    dataGridViewEmployees.Rows.RemoveAt(rowsToDelete[i]);
+                }
+                dataGridViewEmployees.ClearSelection();
+                MessageBox.Show("Строка успешно удалена!", "Успех",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UpdateStatistics();
+                UpdateCharts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка удаления строки: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void UpdateStatistics()
         {
             // СТАТИСТИКА ДОГОВОРОВ
@@ -229,27 +318,22 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                 double totalSum = 0;
                 double maxSum = 0;
                 double minSum = double.MaxValue;
-
                 foreach (DataGridViewRow row in dataGridViewContracts.Rows)
                 {
                     if (row.IsNewRow) continue;
                     totalContracts++;
-
-                    // Сумма договора в 5-м столбце (индекс 4)
                     if (row.Cells[4].Value != null &&
                         double.TryParse(row.Cells[4].Value.ToString(),
-                        System.Globalization.NumberStyles.Float,
-                        System.Globalization.CultureInfo.InvariantCulture,
-                        out double sum))
+                            System.Globalization.NumberStyles.Float,
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            out double sum))
                     {
                         totalSum += sum;
                         if (sum > maxSum) maxSum = sum;
                         if (sum < minSum) minSum = sum;
                     }
                 }
-
                 double avgSum = totalContracts > 0 ? totalSum / totalContracts : 0;
-
                 labelTotalContracts.Text = $"Всего договоров: {totalContracts}";
                 labelTotalSum.Text = $"Общая сумма: {totalSum:F2} руб.";
                 labelAvgSum.Text = $"Средняя сумма: {avgSum:F2} руб.";
@@ -272,27 +356,22 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                 double totalSalary = 0;
                 double maxSalary = 0;
                 double minSalary = double.MaxValue;
-
                 foreach (DataGridViewRow row in dataGridViewEmployees.Rows)
                 {
                     if (row.IsNewRow) continue;
                     totalEmployees++;
-
-                    // Оклад в 6-м столбце (индекс 5)
                     if (row.Cells[5].Value != null &&
                         double.TryParse(row.Cells[5].Value.ToString(),
-                        System.Globalization.NumberStyles.Float,
-                        System.Globalization.CultureInfo.InvariantCulture,
-                        out double salary))
+                            System.Globalization.NumberStyles.Float,
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            out double salary))
                     {
                         totalSalary += salary;
                         if (salary > maxSalary) maxSalary = salary;
                         if (salary < minSalary) minSalary = salary;
                     }
                 }
-
                 double avgSalary = totalEmployees > 0 ? totalSalary / totalEmployees : 0;
-
                 labelTotalEmployees.Text = $"Всего сотрудников: {totalEmployees}";
                 labelAvgSalary.Text = $"Средний оклад: {avgSalary:F2} руб.";
                 labelMaxSalary.Text = $"Максимальный оклад: {(maxSalary > 0 ? maxSalary.ToString("F2") : "0")} руб.";
@@ -317,27 +396,21 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         {
             chartContractTypes.Series.Clear();
             chartContractTypes.Titles.Clear();
-
             var series = new System.Windows.Forms.DataVisualization.Charting.Series
             {
                 Name = "Типы договоров",
                 ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
             };
             chartContractTypes.Series.Add(series);
-
             var contractTypes = new Dictionary<string, int>();
-
-            // Тип договора в 7-м столбце (индекс 6)
             foreach (DataGridViewRow row in dataGridViewContracts.Rows)
             {
                 if (row.IsNewRow) continue;
-
                 string type = row.Cells[6]?.Value?.ToString() ?? "Не указан";
                 if (!contractTypes.ContainsKey(type))
                     contractTypes[type] = 0;
                 contractTypes[type]++;
             }
-
             foreach (var kvp in contractTypes)
             {
                 if (kvp.Value > 0)
@@ -349,7 +422,6 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         {
             chartSalary.Series.Clear();
             chartSalary.Titles.Clear();
-
             var series = new System.Windows.Forms.DataVisualization.Charting.Series
             {
                 Name = "Оклады",
@@ -357,19 +429,17 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                 Color = System.Drawing.Color.SteelBlue
             };
             chartSalary.Series.Add(series);
-
             int employeeCount = 0;
             foreach (DataGridViewRow row in dataGridViewEmployees.Rows)
             {
                 if (row.IsNewRow) continue;
                 employeeCount++;
-
                 string shortName = $"Сотр. {employeeCount}";
                 if (row.Cells[5]?.Value != null &&
                     double.TryParse(row.Cells[5].Value.ToString(),
-                    System.Globalization.NumberStyles.Float,
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    out double salary))
+                        System.Globalization.NumberStyles.Float,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        out double salary))
                 {
                     series.Points.AddXY(shortName, salary);
                 }
@@ -404,9 +474,7 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         }
 
         private void FormMain_Load(object sender, EventArgs e)
-        {          
-
-            // Инициализация при загрузке формы
+        {
             textBoxSearchContracts.Text = "";
             textBoxSearchEmployees.Text = "";
 
@@ -428,7 +496,6 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             dataGridViewEmployees.Columns.Add("Оклад", "Оклад");
             dataGridViewEmployees.Columns.Add("Начало работы", "Начало работы");
             dataGridViewEmployees.Columns.Add("Окончание работы", "Окончание работы");
-
         }
 
         private void textBoxSearchContracts_TextChanged(object sender, EventArgs e)

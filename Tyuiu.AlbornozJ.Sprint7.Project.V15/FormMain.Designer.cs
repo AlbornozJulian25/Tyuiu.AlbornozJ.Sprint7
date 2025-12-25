@@ -3,7 +3,6 @@
     partial class FormMain
     {
         private System.ComponentModel.IContainer components = null;
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -14,7 +13,6 @@
         }
 
         #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
@@ -93,27 +91,27 @@
             this.toolTipMain = new System.Windows.Forms.ToolTip();
             this.tabControlMain.SuspendLayout();
             this.tabPageContracts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerContracts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerContracts)).BeginInit();
             this.splitContainerContracts.Panel1.SuspendLayout();
             this.splitContainerContracts.Panel2.SuspendLayout();
             this.splitContainerContracts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dataGridViewContracts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).BeginInit();
             this.panelContractsTools.SuspendLayout();
             this.groupBoxContractsSearch.SuspendLayout();
             this.groupBoxContractsFile.SuspendLayout();
             this.groupBoxContractsEdit.SuspendLayout();
             this.tabPageEmployees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerEmployees).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerEmployees)).BeginInit();
             this.splitContainerEmployees.Panel1.SuspendLayout();
             this.splitContainerEmployees.Panel2.SuspendLayout();
             this.splitContainerEmployees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dataGridViewEmployees).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             this.panelEmployeesTools.SuspendLayout();
             this.groupBoxEmployeesSearch.SuspendLayout();
             this.groupBoxEmployeesFile.SuspendLayout();
             this.groupBoxEmployeesEdit.SuspendLayout();
             this.tabPageStatistics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerStats).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerStats)).BeginInit();
             this.splitContainerStats.Panel1.SuspendLayout();
             this.splitContainerStats.Panel2.SuspendLayout();
             this.splitContainerStats.SuspendLayout();
@@ -122,8 +120,8 @@
             this.groupBoxEmployeesStats.SuspendLayout();
             this.panelRightStats.SuspendLayout();
             this.groupBoxCharts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.chartContractTypes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.chartSalary).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartContractTypes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalary)).BeginInit();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -229,8 +227,6 @@
             // 
             // buttonAddFileContracts
             // 
-            this.buttonAddFileContracts.Text = "📂";
-            this.buttonAddFileContracts.Image = null;
             this.buttonAddFileContracts.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileContracts.Name = "buttonAddFileContracts";
             this.buttonAddFileContracts.Size = new System.Drawing.Size(75, 60);
@@ -242,8 +238,6 @@
             // buttonSaveFileContracts
             // 
             this.buttonSaveFileContracts.Enabled = false;
-            this.buttonSaveFileContracts.Text = "💾";
-            this.buttonSaveFileContracts.Image = null;
             this.buttonSaveFileContracts.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileContracts.Name = "buttonSaveFileContracts";
             this.buttonSaveFileContracts.Size = new System.Drawing.Size(75, 60);
@@ -268,8 +262,6 @@
             // buttonRefreshContracts
             // 
             this.buttonRefreshContracts.Enabled = false;
-            this.buttonRefreshContracts.Text = "🔄";
-            this.buttonRefreshContracts.Image = null;
             this.buttonRefreshContracts.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshContracts.Name = "buttonRefreshContracts";
             this.buttonRefreshContracts.Size = new System.Drawing.Size(60, 60);
@@ -281,8 +273,6 @@
             // buttonEditRowContracts
             // 
             this.buttonEditRowContracts.Enabled = false;
-            this.buttonEditRowContracts.Text = "✏️";
-            this.buttonEditRowContracts.Image = null;
             this.buttonEditRowContracts.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowContracts.Name = "buttonEditRowContracts";
             this.buttonEditRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -294,8 +284,6 @@
             // buttonDelRowContracts
             // 
             this.buttonDelRowContracts.Enabled = false;
-            this.buttonDelRowContracts.Text = "❌";
-            this.buttonDelRowContracts.Image = null;
             this.buttonDelRowContracts.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowContracts.Name = "buttonDelRowContracts";
             this.buttonDelRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -307,8 +295,6 @@
             // buttonAddRowContracts
             // 
             this.buttonAddRowContracts.Enabled = false;
-            this.buttonAddRowContracts.Text = "➕";
-            this.buttonAddRowContracts.Image = null;
             this.buttonAddRowContracts.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowContracts.Name = "buttonAddRowContracts";
             this.buttonAddRowContracts.Size = new System.Drawing.Size(60, 60);
@@ -381,7 +367,7 @@
             // 
             this.textBoxSearchEmployees.Location = new System.Drawing.Point(10, 50);
             this.textBoxSearchEmployees.Name = "textBoxSearchEmployees";
-            this.textBoxSearchEmployees.Size = new System.Drawing.Size(230, 20);            
+            this.textBoxSearchEmployees.Size = new System.Drawing.Size(230, 20);
             this.textBoxSearchEmployees.TabIndex = 1;
             this.textBoxSearchEmployees.TextChanged += new System.EventHandler(this.textBoxSearchEmployees_TextChanged);
             // 
@@ -407,8 +393,6 @@
             // 
             // buttonAddFileEmployees
             // 
-            this.buttonAddFileEmployees.Text = "📂";
-            this.buttonAddFileEmployees.Image = null;
             this.buttonAddFileEmployees.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileEmployees.Name = "buttonAddFileEmployees";
             this.buttonAddFileEmployees.Size = new System.Drawing.Size(75, 60);
@@ -420,14 +404,13 @@
             // buttonSaveFileEmployees
             // 
             this.buttonSaveFileEmployees.Enabled = false;
-            this.buttonSaveFileEmployees.Text = "💾";
-            this.buttonSaveFileEmployees.Image = null;
             this.buttonSaveFileEmployees.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileEmployees.Name = "buttonSaveFileEmployees";
             this.buttonSaveFileEmployees.Size = new System.Drawing.Size(75, 60);
             this.buttonSaveFileEmployees.TabIndex = 0;
             this.toolTipMain.SetToolTip(this.buttonSaveFileEmployees, "Сохранить сотрудников в файл");
             this.buttonSaveFileEmployees.UseVisualStyleBackColor = true;
+            this.buttonSaveFileEmployees.Click += new System.EventHandler(this.buttonSaveFileEmployees_Click);
             // 
             // groupBoxEmployeesEdit
             // 
@@ -445,8 +428,6 @@
             // buttonRefreshEmployees
             // 
             this.buttonRefreshEmployees.Enabled = false;
-            this.buttonRefreshEmployees.Text = "🔄";
-            this.buttonRefreshEmployees.Image = null;
             this.buttonRefreshEmployees.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshEmployees.Name = "buttonRefreshEmployees";
             this.buttonRefreshEmployees.Size = new System.Drawing.Size(60, 60);
@@ -458,38 +439,35 @@
             // buttonEditRowEmployees
             // 
             this.buttonEditRowEmployees.Enabled = false;
-            this.buttonEditRowEmployees.Text = "✏️";
-            this.buttonEditRowEmployees.Image = null;
             this.buttonEditRowEmployees.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowEmployees.Name = "buttonEditRowEmployees";
             this.buttonEditRowEmployees.Size = new System.Drawing.Size(60, 60);
             this.buttonEditRowEmployees.TabIndex = 2;
             this.toolTipMain.SetToolTip(this.buttonEditRowEmployees, "Режим редактирования");
             this.buttonEditRowEmployees.UseVisualStyleBackColor = true;
+            this.buttonEditRowEmployees.Click += new System.EventHandler(this.buttonEditRowEmployees_Click);
             // 
             // buttonDelRowEmployees
             // 
             this.buttonDelRowEmployees.Enabled = false;
-            this.buttonDelRowEmployees.Text = "❌";
-            this.buttonDelRowEmployees.Image = null;
             this.buttonDelRowEmployees.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowEmployees.Name = "buttonDelRowEmployees";
             this.buttonDelRowEmployees.Size = new System.Drawing.Size(60, 60);
             this.buttonDelRowEmployees.TabIndex = 1;
             this.toolTipMain.SetToolTip(this.buttonDelRowEmployees, "Удалить строку");
             this.buttonDelRowEmployees.UseVisualStyleBackColor = true;
+            this.buttonDelRowEmployees.Click += new System.EventHandler(this.buttonDelRowEmployees_Click);
             // 
             // buttonAddRowEmployees
             // 
             this.buttonAddRowEmployees.Enabled = false;
-            this.buttonAddRowEmployees.Text = "➕";
-            this.buttonAddRowEmployees.Image = null;
             this.buttonAddRowEmployees.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowEmployees.Name = "buttonAddRowEmployees";
             this.buttonAddRowEmployees.Size = new System.Drawing.Size(60, 60);
             this.buttonAddRowEmployees.TabIndex = 0;
             this.toolTipMain.SetToolTip(this.buttonAddRowEmployees, "Добавить строку");
             this.buttonAddRowEmployees.UseVisualStyleBackColor = true;
+            this.buttonAddRowEmployees.Click += new System.EventHandler(this.buttonAddRowEmployees_Click);
             // 
             // tabPageStatistics
             // 
@@ -760,6 +738,7 @@
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
             this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.buttonSaveFileEmployees_Click);
             // 
             // toolStripSeparator1
             // 
@@ -836,9 +815,9 @@
             this.tabPageContracts.ResumeLayout(false);
             this.splitContainerContracts.Panel1.ResumeLayout(false);
             this.splitContainerContracts.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerContracts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerContracts)).EndInit();
             this.splitContainerContracts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.dataGridViewContracts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).EndInit();
             this.panelContractsTools.ResumeLayout(false);
             this.groupBoxContractsSearch.ResumeLayout(false);
             this.groupBoxContractsSearch.PerformLayout();
@@ -847,9 +826,9 @@
             this.tabPageEmployees.ResumeLayout(false);
             this.splitContainerEmployees.Panel1.ResumeLayout(false);
             this.splitContainerEmployees.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerEmployees).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerEmployees)).EndInit();
             this.splitContainerEmployees.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.dataGridViewEmployees).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).EndInit();
             this.panelEmployeesTools.ResumeLayout(false);
             this.groupBoxEmployeesSearch.ResumeLayout(false);
             this.groupBoxEmployeesSearch.PerformLayout();
@@ -858,7 +837,7 @@
             this.tabPageStatistics.ResumeLayout(false);
             this.splitContainerStats.Panel1.ResumeLayout(false);
             this.splitContainerStats.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.splitContainerStats).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerStats)).EndInit();
             this.splitContainerStats.ResumeLayout(false);
             this.panelLeftStats.ResumeLayout(false);
             this.groupBoxContractsStats.ResumeLayout(false);
@@ -867,15 +846,13 @@
             this.groupBoxEmployeesStats.PerformLayout();
             this.panelRightStats.ResumeLayout(false);
             this.groupBoxCharts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.chartContractTypes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.chartSalary).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartContractTypes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalary)).EndInit();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
 
         private System.Windows.Forms.TabControl tabControlMain;
