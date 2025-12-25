@@ -37,6 +37,10 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     }
                     dataGridViewContracts.Rows.Add(row);
                 }
+
+                // HABILITA EL BOTÓN "ОБНОВИТЬ ДАННЫЕ" ← NUEVA LÍNEA
+                buttonRefreshContracts.Enabled = true;
+
                 MessageBox.Show("Данные договоров успешно загружены!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateStatistics();
@@ -182,6 +186,10 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
                     }
                     dataGridViewEmployees.Rows.Add(row);
                 }
+
+                // HABILITA EL BOTÓN "ОБНОВИТЬ ДАННЫЕ" ← NUEVA LÍNEA
+                buttonRefreshEmployees.Enabled = true;
+
                 MessageBox.Show("Данные сотрудников успешно загружены!", "Успех",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UpdateStatistics();
@@ -538,18 +546,15 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
 
         private void buttonRefreshContracts_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(openFilePathContracts))
-            {
-                buttonAddFileContracts_Click(sender, e);
-            }
+            UpdateStatistics();
+            UpdateCharts();
+
         }
 
         private void buttonRefreshEmployees_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(openFilePathEmployees))
-            {
-                buttonAddFileEmployees_Click(sender, e);
-            }
+            UpdateStatistics(); 
+            UpdateCharts();
         }
     }
 }
