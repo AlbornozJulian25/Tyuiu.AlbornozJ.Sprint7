@@ -430,19 +430,26 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
         {
             chartSalary.Series.Clear();
             chartSalary.Titles.Clear();
+            chartSalary.Titles.Add("Оклады сотрудников");
+
             var series = new System.Windows.Forms.DataVisualization.Charting.Series
             {
                 Name = "Оклады",
-                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
-                Color = System.Drawing.Color.SteelBlue
+                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie, // ← CAMBIO AQUÍ
+                IsValueShownAsLabel = true,
+                Label = "#VALX: #VALY руб."
             };
+
             chartSalary.Series.Add(series);
+
             int employeeCount = 0;
             foreach (DataGridViewRow row in dataGridViewEmployees.Rows)
             {
                 if (row.IsNewRow) continue;
+
                 employeeCount++;
                 string shortName = $"Сотр. {employeeCount}";
+
                 if (row.Cells[5]?.Value != null &&
                     double.TryParse(row.Cells[5].Value.ToString(),
                         System.Globalization.NumberStyles.Float,
@@ -504,6 +511,15 @@ namespace Tyuiu.AlbornozJ.Sprint7.Project.V15
             dataGridViewEmployees.Columns.Add("Оклад", "Оклад");
             dataGridViewEmployees.Columns.Add("Начало работы", "Начало работы");
             dataGridViewEmployees.Columns.Add("Окончание работы", "Окончание работы");
+
+            int containerHeight = groupBoxCharts.Height;
+            int halfHeight = containerHeight / 2;
+
+            chartContractTypes.Height = halfHeight;
+            chartContractTypes.Dock = DockStyle.Top;
+
+            chartSalary.Height = halfHeight;
+            chartSalary.Dock = DockStyle.Bottom;
         }
 
         private void textBoxSearchContracts_TextChanged(object sender, EventArgs e)
