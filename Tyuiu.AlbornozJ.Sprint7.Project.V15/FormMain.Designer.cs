@@ -227,6 +227,7 @@
             // 
             // buttonAddFileContracts
             // 
+            this.buttonAddFileContracts.Text = "📂";
             this.buttonAddFileContracts.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileContracts.Name = "buttonAddFileContracts";
             this.buttonAddFileContracts.Size = new System.Drawing.Size(75, 60);
@@ -237,6 +238,7 @@
             // 
             // buttonSaveFileContracts
             // 
+            this.buttonSaveFileContracts.Text = "💾";
             this.buttonSaveFileContracts.Enabled = false;
             this.buttonSaveFileContracts.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileContracts.Name = "buttonSaveFileContracts";
@@ -261,6 +263,7 @@
             // 
             // buttonRefreshContracts
             // 
+            this.buttonRefreshContracts.Text = "🔄";
             this.buttonRefreshContracts.Enabled = false;
             this.buttonRefreshContracts.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshContracts.Name = "buttonRefreshContracts";
@@ -272,6 +275,7 @@
             // 
             // buttonEditRowContracts
             // 
+            this.buttonEditRowContracts.Text = "✏️";
             this.buttonEditRowContracts.Enabled = false;
             this.buttonEditRowContracts.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowContracts.Name = "buttonEditRowContracts";
@@ -283,6 +287,7 @@
             // 
             // buttonDelRowContracts
             // 
+            this.buttonDelRowContracts.Text = "❌";
             this.buttonDelRowContracts.Enabled = false;
             this.buttonDelRowContracts.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowContracts.Name = "buttonDelRowContracts";
@@ -294,6 +299,7 @@
             // 
             // buttonAddRowContracts
             // 
+            this.buttonAddRowContracts.Text = "➕";
             this.buttonAddRowContracts.Enabled = false;
             this.buttonAddRowContracts.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowContracts.Name = "buttonAddRowContracts";
@@ -393,6 +399,7 @@
             // 
             // buttonAddFileEmployees
             // 
+            this.buttonAddFileEmployees.Text = "📂";
             this.buttonAddFileEmployees.Location = new System.Drawing.Point(20, 25);
             this.buttonAddFileEmployees.Name = "buttonAddFileEmployees";
             this.buttonAddFileEmployees.Size = new System.Drawing.Size(75, 60);
@@ -403,6 +410,7 @@
             // 
             // buttonSaveFileEmployees
             // 
+            this.buttonSaveFileEmployees.Text = "💾";
             this.buttonSaveFileEmployees.Enabled = false;
             this.buttonSaveFileEmployees.Location = new System.Drawing.Point(105, 25);
             this.buttonSaveFileEmployees.Name = "buttonSaveFileEmployees";
@@ -427,6 +435,7 @@
             // 
             // buttonRefreshEmployees
             // 
+            this.buttonRefreshEmployees.Text = "🔄";
             this.buttonRefreshEmployees.Enabled = false;
             this.buttonRefreshEmployees.Location = new System.Drawing.Point(245, 25);
             this.buttonRefreshEmployees.Name = "buttonRefreshEmployees";
@@ -438,6 +447,7 @@
             // 
             // buttonEditRowEmployees
             // 
+            this.buttonEditRowEmployees.Text = "✏️";
             this.buttonEditRowEmployees.Enabled = false;
             this.buttonEditRowEmployees.Location = new System.Drawing.Point(165, 25);
             this.buttonEditRowEmployees.Name = "buttonEditRowEmployees";
@@ -449,6 +459,7 @@
             // 
             // buttonDelRowEmployees
             // 
+            this.buttonDelRowEmployees.Text = "❌";
             this.buttonDelRowEmployees.Enabled = false;
             this.buttonDelRowEmployees.Location = new System.Drawing.Point(85, 25);
             this.buttonDelRowEmployees.Name = "buttonDelRowEmployees";
@@ -460,6 +471,7 @@
             // 
             // buttonAddRowEmployees
             // 
+            this.buttonAddRowEmployees.Text = "➕";
             this.buttonAddRowEmployees.Enabled = false;
             this.buttonAddRowEmployees.Location = new System.Drawing.Point(5, 25);
             this.buttonAddRowEmployees.Name = "buttonAddRowEmployees";
